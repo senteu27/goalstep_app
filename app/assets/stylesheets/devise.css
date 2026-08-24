@@ -1,0 +1,121 @@
+.signup-page {
+  min-height: calc(100vh - 100px);
+  padding: 56px 20px;
+  background: #f4f7f4;
+}
+
+.signup-card {
+  width: min(100%, 520px);
+  margin: 0 auto;
+  padding: 42px;
+  background: #ffffff;
+  border: 1px solid #cbd7cd;
+  border-top: 5px solid #176b3a;
+  border-radius: 3px;
+  box-shadow: 0 8px 20px rgba(22, 63, 38, 0.1);
+}
+
+.signup-heading {
+  margin-bottom: 32px;
+  text-align: left;
+}
+
+.signup-eyebrow {
+  margin: 0 0 7px;
+  color: #217344;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.signup-heading h2 {
+  margin: 0;
+  color: #173b26;
+  font-size: 1.9rem;
+  letter-spacing: 0.03em;
+}
+
+.signup-heading p:last-child {
+  margin: 10px 0 0;
+  color: #66736a;
+  font-size: 0.9rem;
+}
+
+.field {
+  margin-bottom: 22px;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 8px;
+  color: #274332;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.field input {
+  width: 100%;
+  height: 46px;
+  padding: 0 13px;
+  color: #1e2e24;
+  font: inherit;
+  background: #fff;
+  border: 1px solid #bfcac1;
+  border-radius: 2px;
+  outline: none;
+  transition: border-color 0.18s, box-shadow 0.18s;
+}
+
+.field input::placeholder {
+  color: #98a39b;
+}
+
+.field input:focus {
+  border-color: #176b3a;
+  box-shadow: 0 0 0 3px rgba(23, 107, 58, 0.13);
+}
+
+.signup-submit {
+  width: 100%;
+  height: 48px;
+  margin-top: 8px;
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  background: #176b3a;
+  border: 1px solid #176b3a;
+  border-radius: 2px;
+  transition: background 0.18s, transform 0.18s;
+}
+
+.signup-submit:hover {
+  background: #11552e;
+  transform: translateY(-1px);
+}
+
+.signup-login-link {
+  margin: 25px 0 0;
+  color: #66736a;
+  font-size: 0.88rem;
+  text-align: center;
+}
+
+.signup-login-link a {
+  margin-left: 4px;
+  color: #176b3a;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+  .signup-page {
+    padding: 28px 14px;
+  }
+
+  .signup-card {
+    padding: 30px 22px;
+  }
+}

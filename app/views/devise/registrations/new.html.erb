@@ -1,0 +1,46 @@
+<main class="signup-page">
+  <section class="signup-card">
+    <div class="signup-heading">
+      <p class="signup-eyebrow">CREATE ACCOUNT</p>
+      <h2>新規登録</h2>
+      <p>アカウントを作成して、さっそく始めましょう。</p>
+    </div>
+
+    <%= form_with model: @user,
+                  url: user_registration_path,
+                  class: "registration-main",
+                  local: true do |f| %>
+
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="field">
+        <%= f.label :email, "メールアドレス" %>
+        <%= f.email_field :email,
+                          autofocus: true,
+                          autocomplete: "email",
+                          placeholder: "@email.com" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password, "パスワード" %>
+        <%= f.password_field :password,
+                             autocomplete: "new-password",
+                             placeholder: "6文字以上で入力" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password_confirmation, "パスワード（確認）" %>
+        <%= f.password_field :password_confirmation,
+                             autocomplete: "new-password",
+                             placeholder: "もう一度入力" %>
+      </div>
+
+      <%= f.submit "新規登録する", class: "signup-submit" %>
+    <% end %>
+
+    <p class="signup-login-link">
+      すでにアカウントをお持ちですか？
+      <%= link_to "ログイン", new_user_session_path %>
+    </p>
+  </section>
+</main>

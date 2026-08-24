@@ -1,0 +1,45 @@
+
+      * { box-sizing: border-box; }
+      body {
+        margin: 0; color: #202522; background: #f6f7f4; font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+      }
+
+      header {
+        display: flex; justify-content: space-between; align-items: center; padding: 18px 28px;
+      }
+
+      a {
+        color: #202522; text-decoration: none; font-weight: 800;
+      }
+
+      main {
+        width: min(100% - 48px, 620px); margin: 80px auto;
+      }
+
+      h1 {
+        margin-bottom: 10px; font-size: 2rem; letter-spacing: -.04em;
+      }
+
+      p {
+        color: #68716c; line-height: 1.8;
+      }
+
+      label {
+        display: block; margin: 28px 0 8px; font-weight: 700;
+      }
+
+      input, textarea {
+        width: 100%; padding: 14px; border: 1px solid #d9dfda; border-radius: 10px; background: white; font: inherit;
+      }
+
+      textarea {
+        min-height: 150px; resize: vertical;
+      }
+      
+      button {
+        margin-top: 18px; padding: 13px 18px; border: 0; border-radius: 10px; background: #286047; color: white; cursor: pointer; font: inherit; font-weight: 700;
+      }
+      
+      .goal{
+        height: 80px; font-size: 24px;
+      }

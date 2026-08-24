@@ -34,12 +34,3 @@ has_many :min_goals
 
 belongs_to :goal
 
-## weekly_gaolsテーブル
-
-|column          |type      |options                 |
-|target_min_gaols|integer   |null: false             |
-|goal_id         |references|null: false, foreign_key|
-
-## associations
-
-belongs_to :goal
