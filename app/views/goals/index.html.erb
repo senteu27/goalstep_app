@@ -1,0 +1,25 @@
+<header>
+  <ul>
+    <% if user_signed_in? %>
+      <li>
+        <%= link_to "ログアウト",
+    destroy_user_session_path,
+    data: { turbo_method: :delete },
+    class:"logout" %>
+      </li>
+    <% else %>
+      <li>
+        <%= link_to "新規登録", new_user_registration_path, class:"signed_up" %>
+     </li>
+      <li>
+        <%= link_to "ログイン", new_user_session_path, class:"login"%>
+        </li>
+    <% end %>
+    </ul>
+    </header>
+
+    <main>
+      <p></p>
+
+      <%= link_to "目標作成フォーム", new_goal_path, class:"new_goal"%>
+</main>

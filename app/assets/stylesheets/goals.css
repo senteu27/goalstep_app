@@ -4,16 +4,13 @@
         margin: 0; color: #202522; background: #f6f7f4; font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
       }
 
-      header {
-        display: flex; justify-content: space-between; align-items: center; padding: 18px 28px;
-      }
 
       a {
         color: #202522; text-decoration: none; font-weight: 800;
       }
 
       main {
-        width: min(100% - 48px, 620px); margin: 80px auto;
+        width: min(100% - 48px, 620px);margin: 80px auto;
       }
 
       h1 {
@@ -32,14 +29,103 @@
         width: 100%; padding: 14px; border: 1px solid #d9dfda; border-radius: 10px; background: white; font: inherit;
       }
 
+      input::placeholder {
+        font-size: 15px;
+      }
+
       textarea {
         min-height: 150px; resize: vertical;
       }
       
-      button {
-        margin-top: 18px; padding: 13px 18px; border: 0; border-radius: 10px; background: #286047; color: white; cursor: pointer; font: inherit; font-weight: 700;
-      }
-      
       .goal{
-        height: 80px; font-size: 24px;
+        height: 70px; width:700px ; font-size: 24px;
       }
+
+      ul{
+        display: flex; justify-content: flex-start;
+      }
+
+      li{
+        padding: 5px 20px;
+        list-style: none;
+      }
+
+      .signed_up,.login,.logout{
+        background-color: #286047;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s;
+      }
+
+      .signed_up:hover,
+.login:hover,
+.logout:hover{
+  background-color: #1e4a37;
+  transform: translateY(-2px);
+}
+
+      .new_goal{
+        position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #286047;
+  color: white;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 999px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: 0.2s;
+      }
+
+      .new_goal:hover {
+  background-color: #1e4a37;
+  transform: translateY(-2px);
+}
+
+.plus_conditions,.remove_conditions,.create_goal{
+   margin-top: 18px; padding: 13px 18px; border: 0; border-radius: 10px; background: #286047; color: white; cursor: pointer; font: inherit; font-weight: 700;
+}
+
+.deadline{
+  width: 150px;margin: 20px 0;
+}
+
+.importance-rating {
+  display: inline-flex;
+  flex-direction: row-reverse;
+  align-self: flex-start;
+  width: fit-content;
+  gap: 0.5rem;
+}
+
+.importance-rating input {
+  position: absolute;
+  opacity: 0;
+}
+
+.importance-rating .star {
+  color: #ccc;
+  cursor: pointer;
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.importance-rating .star:hover,
+.importance-rating .star:hover ~ .star,
+.importance-rating input:checked ~ .star {
+  color: #f5b301;
+}
+
+.deadline-and-importance {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}

@@ -1,3 +1,5 @@
+<%= render "devise/shared/header", resource: resource %>
+
 <main class="signup-page">
   <section class="signup-card">
     <div class="signup-heading">
@@ -7,9 +9,9 @@
     </div>
 
     <%= form_with model: @user,
-                  url: new_user_session_path,
-                  class: "session-main",
-                  local: true do |f| %>
+                  url: user_session_path,
+                  class: "registration-main",
+                  data: {turbo: false} do |f| %>
 
       <%= render "devise/shared/error_messages", resource: resource %>
 

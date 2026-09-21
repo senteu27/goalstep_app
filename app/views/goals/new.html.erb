@@ -1,0 +1,51 @@
+<%= form_with model: @goal, id: "goal-form", local: true do |f| %>
+  <%= f.label :name, "目標" %>
+  <%= f.text_field :name,
+        class: "goal",
+        placeholder: "例：ライブに行きたい。○○万円貯めたい。",
+        required: true %>
+
+  <%= f.label :deadline, "期限（任意）" %>
+  <%= f.date_field :deadline,class: "deadline",
+      min: Date.current.iso8601,
+      max: "9999-12-31" %>
+
+<%=f.label :min_goal, "目標達成のためにやるべきこと"%>
+  <div id="conditions">
+    <%= f.fields_for :min_goals do |min_goal_form| %>
+      <div class="condition-row">
+        <%= min_goal_form.text_field :name,
+              class: "min_goals",
+              placeholder: "例：毎月1万円貯金する",
+              required: true %>
+              
+              <%= f.label :deadline, "期限(任意）"%>
+        <%= min_goal_form.date_field :deadline, class: "deadline",
+        min: Date.current.iso8601,
+      max: "9999-12-31"%>
+      </div>
+
+<%=f.label :importance, "重要度"%>
+      <div class="importance-rating">
+  <% 5.downto(1) do |level| %>
+    <%= min_goal_form.radio_button :importance, level %>
+    <%= min_goal_form.label :importance,
+          "★",
+          value: level,
+          class: "star",
+          title: "重要度 #{level}" %>
+  <% end %>
+</div>
+    <% end %>
+  </div>
+
+  <button type="button" id="add-condition" class="plus_conditions">
+    ＋ 条件を追加
+  </button>
+
+  <button type="button" id="remove-condition" class="remove_conditions">
+  − 最後の条件を削除
+</button>
+
+  <%= f.submit "作成する", class: "create_goal" %>
+<% end %>
