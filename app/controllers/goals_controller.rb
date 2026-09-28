@@ -1,7 +1,11 @@
 class GoalsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:new, :create, :show]
   def index
     @user = User.all
+    
+    if user_signed_in?
+    @goals = current_user.goals
+    end
   end
 
   def new
@@ -17,6 +21,10 @@ class GoalsController < ApplicationController
   else
     render :new
   end
+end
+
+def show
+  @goal = current_user.goals.find(params[:id])
 end
 
   private
