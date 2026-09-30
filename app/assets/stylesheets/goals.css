@@ -1,8 +1,21 @@
 
       * { box-sizing: border-box; }
-      body {
-        margin: 0; color: #202522; background: #f6f7f4; font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+
+      html{
+         min-height: 100%;
       }
+
+      body {
+        min-height: 100%;
+        margin: 0;
+        color: #202522; background: linear-gradient(
+    135deg,
+    #7dffcb 0%,
+    #a5fff3 50%,
+    #d6eef9 100%);
+     font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+      }
+
 
 
       a {
@@ -43,12 +56,14 @@
 
       ul{
         display: flex; justify-content: flex-start;
+        padding: 0;
       }
 
       li{
-        padding: 5px 20px;
+        padding: 10px 25px;
         list-style: none;
       }
+
 
       .signed_up,.login,.logout{
         background-color: #286047;
@@ -128,4 +143,78 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+
+.all_goal{
+  display: block;
+  border: solid, 1px #1e4a37 ;
+  border-radius: 15px;
+  overflow: hidden;
+  margin: 30px;
+}
+
+.goal_deadline{
+  font-size: 35px;
+  white-space: nowrap;
+  color: rgb(255, 0, 0);
+  font-family: "Roboto", sans-serif;
+  font-weight: 550;
+}
+
+.goal_deadline span{
+  color: #fcc800;
+}
+
+.min_goal_deadline{
+  font-size: 20px;
+  white-space: nowrap;
+  color: rgb(255, 0, 0);
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+
+.min_goal_deadline span{
+  color: #fcc800;
+}
+
+.goal_name{
+  font-size: 30px;
+  color: white;
+  font-family: "M PLUS Rounded 1C", sans-serif;
+  font-weight: 700;
+}
+
+.main_goal{
+  background-color: #1E4A37;
+  padding: 5px;
+}
+
+.min_goal{
+  background-color: #128f59;
+}
+
+.name{
+  color: #F5FFF8;
+  font-weight: 600;
+}
+
+.show_goal{
+  padding: 5px;
+}
+
+.home_page{
+  background-color: #286047;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.home_page:hover{
+   background-color: #1e4a37;
+  transform: translateY(-2px);
 }

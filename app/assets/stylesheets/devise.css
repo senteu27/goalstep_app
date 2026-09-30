@@ -1,7 +1,6 @@
 .signup-page {
   min-height: calc(100vh - 100px);
   padding: 56px 20px;
-  background: #f4f7f4;
 }
 
 .signup-card {
@@ -109,6 +108,8 @@
   text-decoration: underline;
   text-underline-offset: 3px;
 }
+
+
 
 @media (max-width: 600px) {
   .signup-page {
