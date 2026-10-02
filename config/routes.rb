@@ -4,4 +4,5 @@ Rails.application.routes.draw do
 
    root "goals#index"
    resources :goals
+   resources :min_goals, only: [:update]
 end

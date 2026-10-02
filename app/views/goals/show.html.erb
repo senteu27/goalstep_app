@@ -1,3 +1,29 @@
 <%= render "devise/shared/header" %>
 
+<div class="show_goal_name">
 <%= @goal.name %>
+</div>
+
+<% @goal.min_goals.each do |min_goal| %>
+<div class="show_goal">
+<div class="show_name">
+<%= min_goal.name%>
+</div>
+<div class="show_importance">
+<%= min_goal.importance %>
+</div>
+<div class="show_deadline">
+<%= min_goal.deadline %>
+</div>
+<div class=show_check>
+  <%= check_box_tag "min_goal_check_#{min_goal.id}",
+                  "1",
+                  min_goal.check,
+                  data: {
+                    min_goal_id: min_goal.id,
+                    update_url: min_goal_path(min_goal)
+                  },
+                  class: "min-goal-check" %>
+</div>
+</div>
+<% end %>

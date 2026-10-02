@@ -190,7 +190,8 @@
 }
 
 .min_goal{
-  padding: 5px;
+  padding: 0;
+  background-color: rgb(87, 82, 82);;
 }
 
 .min_content{
@@ -199,7 +200,18 @@
 
 .name{
   color: #F5FFF8;
-  font-weight: 600;
+  font-weight: 600
+}
+
+.achievement_goal{
+  color: #baffdf;
+  text-shadow:
+    0 0 5px #7dffcb,
+    0 0 10px #35d996,
+    0 0 20px #35d996;
+    background-color: #11ba71;
+  font-family: "M PLUS Rounded 1C", sans-serif;
+  font-weight: 700;
 }
 
 .show_goal{
@@ -221,4 +233,19 @@
 .home_page:hover{
    background-color: #1e4a37;
   transform: translateY(-2px);
+}
+
+.show_goal_name{
+  color: black;
+  font-size: 30px;
+  padding: 0 30px;
+}
+
+.show_goal{
+  display: flex;
+}
+
+.show_name{
+  color: black;
+  padding: 0 20px;
 }

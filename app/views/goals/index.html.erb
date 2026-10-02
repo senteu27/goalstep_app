@@ -12,10 +12,16 @@
       <%= goal.name %>
       </div>
       </div>
+
       <div class="min_content">
       <% goal.min_goals.each do |min| %>
       <div class="min_goal">
-      <div class="name">
+         <% if min.check == true %>
+         <div class ="achievement_goal">
+          ★達成★
+          </div>
+          <% else %>
+          <div class="name">
         <%= min.name %>
         </div>
         <div class="importance">
@@ -29,13 +35,14 @@
         <div class="min_goal_deadline">
           <%= min.deadline %><% if min.deadline.present?%> <span>まで</span><% end %>
           </div>
+          <% end %>
           </div>
               <% end %>
-               <%= link_to "詳細へ飛ぶ", goal_path(goal), class: "show_goal"%>
-               </div>
+          <%= link_to "詳細へ飛ぶ", goal_path(goal), class: "show_goal"%>
         </div>
+      </div>
     <% end %>
-<% end %>
+  <% end %>
 
   <%= link_to "目標作成フォーム", new_goal_path, class: "new_goal" %>
 </main>

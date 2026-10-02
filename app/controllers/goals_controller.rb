@@ -25,6 +25,7 @@ end
 
 def show
   @goal = current_user.goals.find(params[:id])
+  @min_goals = MinGoal.all
 end
 
   private
