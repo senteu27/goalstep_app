@@ -1,40 +1,41 @@
-
 <%= render "devise/shared/header" %>
-    <main>
-      
-      <% if user_signed_in? %>
-      <% @goals.each do |goal| %>
-      <div class = "all_goal">
-        <div class = "main_goal">
-        <div class = "goal_deadline">
+
+<main>
+  <% if user_signed_in? %>
+    <% @goals.each do |goal| %>
+      <div class="all_goal">
+        <div class="main_goal">
+        <div class="goal_deadline">
       <%= goal.deadline %><% if goal.deadline.present?%> <span>までに</span><% end %>
       </div>
-      <div class = "goal_name">
+      <div class="goal_name">
       <%= goal.name %>
       </div>
       </div>
+      <div class="min_content">
       <% goal.min_goals.each do |min| %>
-      <div class = "min_goal">
-      <div class = "name">
+      <div class="min_goal">
+      <div class="name">
         <%= min.name %>
         </div>
-        <div class = "importance">
+        <div class="importance">
               <% min.importance.to_i.times do %>
-              ★
-            <% end %>
-              <% (5 - min.importance.to_i).times do %>
-              ☆
+                ★
               <% end %>
-              </div>
-        <div class = "min_goal_deadline">
+              <% (5 - min.importance.to_i).times do %>
+                ☆
+              <% end %>
+           </div>
+        <div class="min_goal_deadline">
           <%= min.deadline %><% if min.deadline.present?%> <span>まで</span><% end %>
           </div>
+          </div>
               <% end %>
-               <%= link_to "詳細へ飛ぶ", goal_path(goal), class: "show_goal" %>
-          </div>
-          </div>
-      <% end %>
+               <%= link_to "詳細へ飛ぶ", goal_path(goal), class: "show_goal"%>
+               </div>
+        </div>
     <% end %>
+<% end %>
 
-      <%= link_to "目標作成フォーム", new_goal_path, class:"new_goal"%>
+  <%= link_to "目標作成フォーム", new_goal_path, class: "new_goal" %>
 </main>

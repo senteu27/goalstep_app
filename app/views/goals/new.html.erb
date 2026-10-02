@@ -21,13 +21,12 @@
               placeholder: "例：毎月1万円貯金する",
               required: true %>
               
-              <%= f.label :deadline, "期限(任意）"%>
+              <%= min_goal_form.label :deadline, "期限(任意）"%>
         <%= min_goal_form.date_field :deadline, class: "deadline",
         min: Date.current.iso8601,
       max: "9999-12-31"%>
-      </div>
 
-<%=f.label :importance, "重要度"%>
+  <%=min_goal_form.label :importance, "重要度"%>
       <div class="importance-rating">
   <% 5.downto(1) do |level| %>
     <%= min_goal_form.radio_button :importance, level %>
@@ -37,6 +36,7 @@
           class: "star",
           title: "重要度 #{level}" %>
   <% end %>
+  </div>
 </div>
     <% end %>
   </div>

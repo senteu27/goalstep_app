@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("turbo:load", () => {
   const conditions = document.getElementById("conditions");
   const addButton = document.getElementById("add-condition");
   const removeButton = document.getElementById("remove-condition");

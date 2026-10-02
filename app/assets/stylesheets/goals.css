@@ -185,12 +185,16 @@
 }
 
 .main_goal{
-  background-color: #1E4A37;
+  background-color: #21694a;
   padding: 5px;
 }
 
 .min_goal{
-  background-color: #128f59;
+  padding: 5px;
+}
+
+.min_content{
+    background-color: #11ba71;
 }
 
 .name{
