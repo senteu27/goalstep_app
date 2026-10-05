@@ -4,13 +4,16 @@
 <%= @goal.name %>
 </div>
 
-<% @goal.min_goals.each do |min_goal| %>
+<% @goal.min_goals.order(:deadline).each do |min_goal| %>
 <div class="show_goal">
+  <div class="show_min_goals">
 <div class="show_name">
 <%= min_goal.name%>
 </div>
 <div class="show_importance">
-<%= min_goal.importance %>
+  <% min_goal.importance.times do %>
+  ★
+<% end %>
 </div>
 <div class="show_deadline">
 <%= min_goal.deadline %>
@@ -26,4 +29,6 @@
                   class: "min-goal-check" %>
 </div>
 </div>
+</div>
 <% end %>
+<%= link_to "目標を編集・追加", edit_goal_path(@goal), class: "edit_goal" %>

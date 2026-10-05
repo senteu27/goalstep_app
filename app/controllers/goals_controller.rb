@@ -17,7 +17,7 @@ class GoalsController < ApplicationController
 
 
   if @goal.save
-    redirect_to goals_path
+    redirect_to goal_path(@goal)
   else
     render :new
   end
@@ -28,11 +28,25 @@ def show
   @min_goals = MinGoal.all
 end
 
+def edit
+  @goal = current_user.goals.find(params[:id])
+end
+
+def update
+  @goal = current_user.goals.find(params[:id])
+
+  if @goal.update(goal_params)
+    redirect_to goal_path(@goal)
+  else
+    render :edit
+  end
+end
+
   private
 
   def goal_params
     params.require(:goal).permit(:name, :deadline,
-    min_goals_attributes: [:name, :deadline,:check,:importance])
+    min_goals_attributes: [:name, :deadline,:check,:importance, :id])
     
   end
 
