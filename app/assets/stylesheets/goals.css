@@ -198,6 +198,12 @@
     background-color: #11ba71;
 }
 
+.alert{
+  display: inline;
+  color: red;
+  padding-left: 30px;
+}
+
 .name{
   color: #F5FFF8;
   font-weight: 600
@@ -269,6 +275,28 @@
 
 .show_check{
   padding: 0 5px;
+}
+
+.delete_button{
+  display: flex;
+  justify-content: center;
+}
+.delete_goal{
+  background-color: #286047;
+  color: white;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 999px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: 0.2s;
+}
+
+.delete_goal:hover{
+  background-color: #1e4a37;
+  transform: translateY(-2px);
 }
 
 .edit_goal{

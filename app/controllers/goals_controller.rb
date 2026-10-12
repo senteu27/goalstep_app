@@ -42,12 +42,18 @@ def update
   end
 end
 
+def destroy
+  @goal.destroy
+  redirect_to root_path
+end
+
   private
 
   def goal_params
     params.require(:goal).permit(:name, :deadline,
     min_goals_attributes: [:name, :deadline,:check,:importance, :id])
     
+  end
   end
 
 end

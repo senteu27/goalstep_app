@@ -4,6 +4,7 @@
 <%= @goal.name %>
 </div>
 
+
 <% @goal.min_goals.order(:deadline).each do |min_goal| %>
 <div class="show_goal">
   <div class="show_min_goals">
@@ -31,4 +32,7 @@
 </div>
 </div>
 <% end %>
+<div class="delete_button">
+<%= link_to "この目標を削除する", goal_path(@goal), data:{ turbo_method: :delete}, class: "delete_goal" %>
+</div>
 <%= link_to "目標を編集・追加", edit_goal_path(@goal), class: "edit_goal" %>
