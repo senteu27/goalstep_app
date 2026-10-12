@@ -1,5 +1,6 @@
 class GoalsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :show]
+  before_action :check_user_goal, only: [:show, :edit, :update, :destroy]
   def index
     @user = User.all
     
@@ -24,16 +25,13 @@ class GoalsController < ApplicationController
 end
 
 def show
-  @goal = current_user.goals.find(params[:id])
   @min_goals = MinGoal.all
 end
 
 def edit
-  @goal = current_user.goals.find(params[:id])
 end
 
 def update
-  @goal = current_user.goals.find(params[:id])
 
   if @goal.update(goal_params)
     redirect_to goal_path(@goal)
@@ -52,8 +50,10 @@ end
   def goal_params
     params.require(:goal).permit(:name, :deadline,
     min_goals_attributes: [:name, :deadline,:check,:importance, :id])
-    
   end
+
+  def check_user_goal
+    @goal = current_user.goals.find(params[:id])
   end
 
 end

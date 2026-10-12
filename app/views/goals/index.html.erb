@@ -33,7 +33,7 @@
               <% end %>
            </div>
         <div class="min_goal_deadline">
-          <%= min.deadline %><% if min.deadline.present?%> <span>まで</span><% end %>
+          <%= min.deadline %><% if min.deadline.present?%> <span>まで</span><% if min.deadline.present? && min.deadline <= Date.current %><div class="alert">期限を過ぎています</div><% end %><% end %>
           </div>
           <% end %>
           </div>
