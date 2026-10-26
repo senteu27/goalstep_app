@@ -31,7 +31,7 @@
       }
 
       p {
-        color: #68716c; line-height: 1.8;
+        color: red; line-height: 1.8;
       }
 
       label {
@@ -157,24 +157,26 @@
   font-size: 35px;
   white-space: nowrap;
   color: rgb(255, 0, 0);
-  font-family: "Roboto", sans-serif;
+  font-family: "Noto Serif JP", sans-serif;
   font-weight: 550;
 }
 
 .goal_deadline span{
   color: #fcc800;
+  font-family: "BIZ UDP明朝", serif;
 }
 
 .min_goal_deadline{
   font-size: 20px;
   white-space: nowrap;
   color: rgb(255, 0, 0);
-  font-family: "Roboto", sans-serif;
+  font-family: "游明朝", sans-serif;
   font-weight: 400;
 }
 
 .min_goal_deadline span{
   color: #fcc800;
+  font-family: "游明朝", serif;
 }
 
 .goal_name{
@@ -318,4 +320,9 @@
 .edit_goal:hover{
    background-color: #1e4a37;
   transform: translateY(-2px);
+}
+
+
+.errors{
+  color: red; line-height: 1.6;
 }
