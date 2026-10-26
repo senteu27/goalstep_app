@@ -16,11 +16,10 @@ class GoalsController < ApplicationController
   def create
     @goal = current_user.goals.new(goal_params)
 
-
   if @goal.save
     redirect_to goal_path(@goal)
   else
-    render :new
+    render :new, status: :unprocessable_content
   end
 end
 
@@ -36,7 +35,7 @@ def update
   if @goal.update(goal_params)
     redirect_to goal_path(@goal)
   else
-    render :edit
+    render :edit, status: :unprocessable_content
   end
 end
 

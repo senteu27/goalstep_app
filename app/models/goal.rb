@@ -8,4 +8,14 @@ class Goal < ApplicationRecord
   with_options presence: true do
     validates :name
   end
+
+  validate :min_goal_check
+
+  private
+
+  def min_goal_check
+  if min_goals.empty?
+    errors.add(:min_goals, "を1つ以上入力してください")
+  end
+end
 end

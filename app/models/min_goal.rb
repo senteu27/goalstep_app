@@ -1,8 +1,10 @@
 class MinGoal < ApplicationRecord
   belongs_to :goal
 
-  validates :name, presence: true
-  validates :importance, inclusion: { in: 1..5 }
+  with_options presence: true do
+  validates :name
+  validates :importance, inclusion: { in: 1..5 }, numericality: {only_integer: true}
+  end
 
   attr_accessor :skip_deadline_validation
 
