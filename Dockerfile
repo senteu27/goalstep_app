@@ -18,7 +18,7 @@ ENV RAILS_ENV="production" \
 FROM base as build
 
 # Install packages needed to build gems
-RUN apt-get update -qq && \
+RUN apt-get update  && \
     apt-get install --no-install-recommends -y build-essential default-libmysqlclient-dev git libvips pkg-config
 
 # Install application gems
