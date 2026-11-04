@@ -34,6 +34,9 @@ document.addEventListener("turbo:load", () => {
     }).join("");
 
     row.innerHTML = `
+     <label for="min-goal-name-${number}">
+    目標のためにやるべきこと
+  </label>
   <input
     class="min_goals"
     name="goal[min_goals_attributes][${number}][name]"
@@ -42,6 +45,9 @@ document.addEventListener("turbo:load", () => {
   >
 
   <div class="deadline-and-importance">
+  <label for="min-goal-deadline-${number}">
+        期限（任意）
+      </label>
     <input
       type="date"
       class="deadline"
@@ -52,6 +58,7 @@ document.addEventListener("turbo:load", () => {
     >
 
     <div class="importance-rating">
+    <label>重要度</label>
       ${stars}
     </div>
   </div>
