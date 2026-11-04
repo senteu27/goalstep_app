@@ -16,6 +16,7 @@
   <div id="conditions">
     <%= f.fields_for :min_goals do |min_goal_form| %>
       <div class="condition-row">
+        <%= min_goal_form.label :name, "目標のためにやるべきこと"%>
         <%= min_goal_form.text_field :name,
               class: "min_goals",
               placeholder: "例：毎月1万円貯金する",
