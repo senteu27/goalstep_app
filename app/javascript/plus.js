@@ -57,8 +57,8 @@ document.addEventListener("turbo:load", () => {
       max="9999-12-31"
     >
 
-    <div class="importance-rating">
     <label>重要度</label>
+    <div class="importance-rating">
       ${stars}
     </div>
   </div>
