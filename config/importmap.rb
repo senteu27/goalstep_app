@@ -9,3 +9,4 @@ pin "plus", to: "plus.js"
 pin "check"
 pin "marked" # @18.2.1
 pin "dompurify" # @3.4.18
+pin "ai_chat", to: "ai_chat.js"
