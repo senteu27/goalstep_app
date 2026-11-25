@@ -30,6 +30,8 @@ RUN bundle install && \
 # Copy application code
 COPY . .
 
+RUN chmod +x bin/rails
+
 # Precompile bootsnap code for faster boot times
 RUN bundle exec bootsnap precompile app/ lib/
 
@@ -60,4 +62,3 @@ ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 3000
 CMD ["./bin/rails", "server"]
-RUN chmod +x bin/rails
