@@ -51,5 +51,41 @@
   − 最後の条件を削除
 </button>
 
+
+
   <%= f.submit "作成する", class: "create_goal" %>
 <% end %>
+
+<div class="chatroom">
+  <button type="button" id="ai-help" class="ai-help">
+    AIに相談する
+  </button>
+
+  <div id="ai-chat" class="ai-chat" hidden>
+    <div class="chat-header">
+      <span>AI目標相談</span>
+
+      <div class="chat_sub_button">
+        <button type="button" id="close-chat" class="chat-icon-button">×</button>
+      </div>
+    </div>
+
+    <div id="chat-content">
+      <div id="chat-messages">
+        <p>こんにちは！目標について何でも相談してください。</p>
+      </div>
+
+      <div class="chat-input-area">
+        <input
+          type="text"
+          id="chat-message"
+          placeholder="相談内容を入力してください"
+        >
+
+        <button type="button" id="send-message" class="chat_send">
+          送信
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

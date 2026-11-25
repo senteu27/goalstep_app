@@ -7,3 +7,5 @@ pin "@hotwired/stimulus-loading", to: "stimulus-loading.js"
 pin_all_from "app/javascript/controllers", under: "controllers"
 pin "plus", to: "plus.js"
 pin "check"
+pin "marked" # @18.2.1
+pin "dompurify" # @3.4.18

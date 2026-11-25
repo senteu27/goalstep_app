@@ -5,4 +5,6 @@ Rails.application.routes.draw do
    root "goals#index"
    resources :goals
    resources :min_goals, only: [:update]
+
+    post "ai_chats", to: "ai_chats#create"
 end

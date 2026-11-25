@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  require "net/http"
+  require "json"
 
   before_action :basic_auth unless Rails.env.test?
   before_action :configure_permitted_parameters, if: :devise_controller?

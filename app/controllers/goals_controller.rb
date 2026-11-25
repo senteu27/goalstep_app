@@ -10,6 +10,8 @@ class GoalsController < ApplicationController
   end
 
   def new
+    current_user.chat_messages.destroy_all
+
       @goal = Goal.new
       @goal.min_goals.build
   end
